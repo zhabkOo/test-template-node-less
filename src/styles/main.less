@@ -1,0 +1,60 @@
+/*
+Write all less code in this file
+Import another styles from less files using @import "[NAME_OF_FILE].less"
+*/
+// Example styles
+@font-face {
+  font-family: "christmas";
+  src: url("../fonts/christmaseve.ttf");
+}
+
+@bgColor: grey;
+@headerColor: #373333;
+
+@size: 40px;
+@family: "christmas";
+
+.baseBodyStyles() {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.flex(@direction) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: @direction;
+}
+
+body {
+  .flex(column);
+  .baseBodyStyles();
+  background: @bgColor;
+
+  & > * {
+    font-size: @size;
+  }
+  & img {
+    border: 0.5px solid rgba(0, 0, 0, 0.5);
+    height: 250px;
+    width: 500px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 21px 30px #5c5656;
+  }
+
+  & h1 {
+    .flex(row);
+    font-family: @family;
+    color: @headerColor;
+  }
+}
+
+.main_body {
+  &_text {
+    font-size: 35px;
+    font-family: @family;
+  }
+}
